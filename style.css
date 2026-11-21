@@ -1,0 +1,175 @@
+/* Page de vente PindiCADViewer : HTML + CSS statiques, aucune dépendance au build de l'application. */
+:root {
+  --bg: #14161a;
+  --bg-2: #1b1e23;
+  --bg-3: #23272e;
+  --line: #2d323a;
+  --navy: #19394d;
+  --orange: #ec871b;
+  --orange-hover: #f59a3a;
+  --text: #e8ecf1;
+  --muted: #aab3bf;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: #7fc0ea; }
+a:hover { color: #a9d8f5; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; border-radius: 4px; }
+
+.wrap { width: min(1100px, 100% - 32px); margin-inline: auto; }
+section { padding: 64px 0; }
+section.alt { background: var(--bg-2); border-block: 1px solid var(--line); }
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -.02em; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); text-align: center; margin-bottom: 1.4em; }
+h3 { font-size: 1.1rem; }
+p { margin: 0 0 1em; }
+.muted { color: var(--muted); }
+
+.skip { position: absolute; left: -999px; top: 8px; background: var(--orange); color: #14161a; padding: 8px 14px; border-radius: 8px; z-index: 10; }
+.skip:focus { left: 8px; }
+
+/* En-tête */
+header.top { background: var(--navy); border-bottom: 1px solid #25506b; }
+header.top .wrap { display: flex; align-items: center; gap: 14px; padding: 12px 0; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+.brand img { width: 52px; height: 52px; border-radius: 10px; object-fit: cover; object-position: top; background: #eaf2f8; }
+.brand strong { font-size: 1.2rem; line-height: 1.2; }
+.brandtxt { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 10px; min-width: 0; }
+.brand .slogan { font-size: .85rem; color: #c5d4df; flex-basis: 100%; }
+header.top .btn { margin-left: auto; padding: 9px 18px; }
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  white-space: nowrap;
+  background: var(--orange);
+  color: #14161a;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  transition: background .15s, transform .15s;
+}
+.btn:hover { background: var(--orange-hover); color: #14161a; transform: translateY(-1px); }
+.btn.big { font-size: 1.15rem; padding: 16px 36px; }
+/* Accueil : « Essayer gratuitement » (plein) et « Acheter » (contour) côte à côte, l'un sous l'autre sur mobile */
+.hero .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.btn.sec { background: transparent; color: var(--orange); box-shadow: inset 0 0 0 2px var(--orange); }
+.btn.sec:hover { background: var(--orange); color: #14161a; }
+
+/* Accroche */
+.hero { text-align: center; padding: 72px 0 40px; background: radial-gradient(ellipse at top, #1d3a4d 0%, var(--bg) 65%); }
+.hero p.lead { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin: 0 auto 1.6em; }
+.hero .note { margin-top: 14px; font-size: .95rem; color: var(--muted); }
+
+/* Captures */
+.shot { padding-top: 24px; }
+.shots { display: block; max-width: 1100px; }
+.group-shot { margin: 0 0 22px; }
+.group-shot figure { margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg-2); box-shadow: 0 12px 40px rgba(0, 0, 0, .4); }
+.group-shot img { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.group-shot figcaption { padding: 10px 14px; font-size: .9rem; color: var(--muted); border-top: 1px solid var(--line); }
+.group-shot .placeholder { display: none; aspect-ratio: 16 / 9; align-items: center; justify-content: center; text-align: center; padding: 16px; color: var(--muted); }
+.group-shot figure.missing img { display: none; }
+.group-shot figure.missing .placeholder { display: flex; }
+.shots figure { margin: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--bg-2); box-shadow: 0 12px 40px rgba(0, 0, 0, .4); }
+.shots img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.shots .placeholder { display: none; aspect-ratio: 16 / 9; align-items: center; justify-content: center; text-align: center; padding: 16px; color: var(--muted); }
+.shots figure.missing img { display: none; }
+.shots figure.missing .placeholder { display: flex; }
+.shots figcaption { padding: 10px 14px; font-size: .9rem; color: var(--muted); border-top: 1px solid var(--line); }
+
+/* Grilles de cartes */
+.grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.card { background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
+section.alt .card { background: var(--bg-3); }
+.card svg { width: 30px; height: 30px; stroke: var(--orange); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 10px; }
+.card p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+/* Prix */
+.price-card { max-width: 420px; margin: 0 auto; text-align: center; background: var(--bg-3); border: 2px solid var(--orange); border-radius: 18px; padding: 36px 28px; }
+.price-card .amount { font-size: 3.4rem; font-weight: 800; margin: .1em 0; }
+.price-card ul { list-style: none; padding: 0; margin: 0 0 1.6em; color: var(--muted); }
+.price-card li { padding: 4px 0; }
+.price-card li::before { content: "✓ "; color: var(--orange); font-weight: 700; }
+
+/* Configuration */
+.req { max-width: 700px; margin: 0 auto; padding-left: 1.2em; }
+.req li { margin-bottom: .6em; }
+
+/* FAQ */
+.faq { max-width: 760px; margin: 0 auto; }
+.faq details { background: var(--bg-2); border: 1px solid var(--line); border-radius: 12px; padding: 4px 18px; margin-bottom: 12px; }
+.faq summary { cursor: pointer; font-weight: 600; padding: 12px 0; }
+.faq details p { color: var(--muted); }
+.todo { background: #5a3a05; color: #ffd9a0; padding: 0 5px; border-radius: 4px; font-weight: 600; }
+
+/* Pied de page */
+footer { background: var(--navy); padding: 36px 0; font-size: .95rem; color: #d5e0e8; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 20px 40px; justify-content: space-between; }
+footer a { color: #fff; }
+footer ul { list-style: none; margin: 0; padding: 0; }
+footer li { margin-bottom: 4px; }
+
+/* Pages annexes */
+.doc { max-width: 780px; padding: 48px 0 72px; }
+.doc h1 { font-size: 2rem; }
+.doc h2 { text-align: left; font-size: 1.3rem; margin: 1.6em 0 .5em; }
+.doc ul { padding-left: 1.2em; }
+.doc .back { display: inline-block; margin-bottom: 20px; }
+
+@media (max-width: 560px) {
+  section { padding: 44px 0; }
+  .hero { padding-top: 48px; }
+  .brand .slogan { display: none; }
+  .brand strong { font-size: 1.05rem; }
+  .brand img { width: 44px; height: 44px; }
+  .btn.big { padding: 14px 24px; }
+  header.top .btn { padding: 8px 14px; font-size: .9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
+
+/* Version, groupes de fonctionnalités, formats */
+.badge { display: inline-block; background: #0f2634; color: #ffd9a0; border: 1px solid var(--orange); border-radius: 999px; padding: 2px 12px; font-size: .8rem; font-weight: 600; white-space: nowrap; }
+.price-card .badge { margin-bottom: 10px; }
+.group { margin-bottom: 44px; }
+.group-title { font-size: 1.35rem; margin-bottom: .2em; color: var(--orange); }
+.group-intro { margin-bottom: 1em; }
+.fmt-title { font-size: 1rem; margin: 1.4em 0 .6em; }
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li { background: var(--bg-3); border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px; font-size: .9rem; }
+.chips span { color: var(--muted); }
+@media (max-width: 560px) {
+  header.top .badge { font-size: .7rem; padding: 0 8px; }
+  .shots { grid-template-columns: 1fr; }
+}
+
+/* Prix, livraison, vidéo et médiateur */
+.price-card .tva, .price-card .livraison { margin: 10px 0 0; font-size: .95rem; }
+#presentation video { width: 100%; height: auto; border-radius: 10px; background: #000; }
+footer .mediateur { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+footer .mediateur img { background: #fff; padding: 4px; border-radius: 6px; }
+
+/* Sélecteur de langue FR | EN (en-tête) */
+header.top nav.lang { margin-left: auto; color: #d5e0e8; font-size: .9rem; white-space: nowrap; }
+header.top nav.lang a { color: #d5e0e8; text-decoration: none; padding: 2px 4px; }
+header.top nav.lang a:hover { color: #fff; text-decoration: underline; }
+header.top nav.lang strong { color: #fff; padding: 2px 4px; }
+header.top nav.lang + .btn { margin-left: 14px; }
+.note-traduction { background: #fff6e8; border-left: 4px solid #ec871b; padding: 10px 14px; border-radius: 6px; }
