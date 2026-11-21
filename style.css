@@ -172,4 +172,6 @@ header.top nav.lang a { color: #d5e0e8; text-decoration: none; padding: 2px 4px;
 header.top nav.lang a:hover { color: #fff; text-decoration: underline; }
 header.top nav.lang strong { color: #fff; padding: 2px 4px; }
 header.top nav.lang + .btn { margin-left: 14px; }
-.note-traduction { background: #fff6e8; border-left: 4px solid #ec871b; padding: 10px 14px; border-radius: 6px; }
+.note-traduction { background: #fff6e8; border-left: 4px solid #ec871b; padding: 10px 14px; border-radius: 6px; color: #1f2328; }
+.note-traduction a { color: #9a3412; }
+.note-traduction a:hover { color: #7c2d12; }
