@@ -162,7 +162,11 @@ footer li { margin-bottom: 4px; }
 
 /* Prix, livraison, vidéo et médiateur */
 .price-card .tva, .price-card .livraison { margin: 10px 0 0; font-size: .95rem; }
-#presentation video { width: 100%; height: auto; border-radius: 10px; background: #000; }
+/* Carte de prix : « Acheter » (plein) et « Essai gratuit » (contour) ont la même largeur, texte centré qui passe à la ligne, sans débordement */
+.price-card .btn { display: block; box-sizing: border-box; width: 100%; max-width: 100%; white-space: normal; text-align: center; padding: 16px 20px; font-size: 1.15rem; }
+.price-card .sous-btn { display: block; margin-top: 6px; color: var(--muted); font-size: .9rem; }
+/* Vidéo de présentation (section #presentation en français, #video en anglais) : jamais plus large que la page */
+.shots video { display: block; width: 100%; max-width: 100%; height: auto; border-radius: 10px; background: #000; }
 footer .mediateur { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 footer .mediateur img { background: #fff; padding: 4px; border-radius: 6px; }
 
@@ -172,6 +176,11 @@ header.top nav.lang a { color: #d5e0e8; text-decoration: none; padding: 2px 4px;
 header.top nav.lang a:hover { color: #fff; text-decoration: underline; }
 header.top nav.lang strong { color: #fff; padding: 2px 4px; }
 header.top nav.lang + .btn { margin-left: 14px; }
+/* Très petits écrans : le bouton « Acheter » de l'en-tête passe sur une 2e ligne au lieu d'élargir la page */
+@media (max-width: 400px) {
+  header.top .wrap { flex-wrap: wrap; row-gap: 8px; }
+  header.top nav.lang + .btn { margin-left: auto; }
+}
 .note-traduction { background: #fff6e8; border-left: 4px solid #ec871b; padding: 10px 14px; border-radius: 6px; color: #1f2328; }
 .note-traduction a { color: #9a3412; }
 .note-traduction a:hover { color: #7c2d12; }
