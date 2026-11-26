@@ -1,319 +1,244 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <base href="/">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- FICHIER GÉNÉRÉ par scripts/site-sync.mjs (npm run site:sync) à partir de scripts/site-template.html et site/produit.json. Ne le modifiez pas ici. -->
-  <title>PindiCADViewer — Visualiseur CAO 3D pour Windows</title>
-  <meta name="description" content="PindiCADViewer 1.9.0 : le visualiseur CAO 3D pour Windows. Ouvrez STEP, IGES, STL, OBJ et plus, mesurez, annotez, coupez et présentez vos assemblages. Prix : 49 €, paiement unique.">
-  <meta name="theme-color" content="#19394D">
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="style.css">
+<base href="/">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pindi Concept — Logiciels techniques et CAO</title>
+<meta name="description" content="Pindi Concept, éditeur de logiciels techniques : PindiCADViewer, visualiseur CAO 3D pour Windows. Achat unique de 49 €, essai gratuit 14 jours."/>
+<link rel="icon" type="image/svg+xml" href="assets/favicon-pindiconcept.svg"/>
+<link rel="alternate" hreflang="fr" href="https://www.pindiconcept.fr/"/>
+<link rel="alternate" hreflang="en" href="https://www.pindiconcept.fr/en/"/>
+<link rel="stylesheet" href="assets/pindiconcept.css"/>
 </head>
-<body>
-<a class="skip" href="#contenu">Aller au contenu</a>
-
-<!-- Icônes lucide, les mêmes que dans l'application (sprite généré) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></symbol>
+<body class="bg-surface font-body-default text-body-default text-on-surface">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-badge-check" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m16 9-5.5 5.5L8 12"/></symbol>
   <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
-  <symbol id="i-mouse-pointer-2" viewBox="0 0 24 24"><path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z"/></symbol>
-  <symbol id="i-box-select" viewBox="0 0 24 24"><path d="M5 3a2 2 0 0 0-2 2"/><path d="M19 3a2 2 0 0 1 2 2"/><path d="M21 19a2 2 0 0 1-2 2"/><path d="M5 21a2 2 0 0 1-2-2"/><path d="M9 3h1"/><path d="M9 21h1"/><path d="M14 3h1"/><path d="M14 21h1"/><path d="M3 9v1"/><path d="M21 9v1"/><path d="M3 14v1"/><path d="M21 14v1"/></symbol>
-  <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></symbol>
-  <symbol id="i-list-tree" viewBox="0 0 24 24"><path d="M8 5h13"/><path d="M13 12h8"/><path d="M13 19h8"/><path d="M3 10a2 2 0 0 0 2 2h3"/><path d="M3 5v12a2 2 0 0 0 2 2h3"/></symbol>
-  <symbol id="i-undo-2" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/></symbol>
-  <symbol id="i-maximize" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M21 8V5a2 2 0 0 0-2-2h-3"/><path d="M3 16v3a2 2 0 0 0 2 2h3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></symbol>
-  <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></symbol>
-  <symbol id="i-pencil-ruler" viewBox="0 0 24 24"><path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13"/><path d="m8 6 2-2"/><path d="m18 16 2-2"/><path d="m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17"/><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></symbol>
-  <symbol id="i-clipboard-list" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></symbol>
-  <symbol id="i-message-square" viewBox="0 0 24 24"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/></symbol>
-  <symbol id="i-layout-grid" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></symbol>
-  <symbol id="i-droplets" viewBox="0 0 24 24"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></symbol>
-  <symbol id="i-pipette" viewBox="0 0 24 24"><path d="m12 9-8.414 8.414A2 2 0 0 0 3 18.828v1.344a2 2 0 0 1-.586 1.414A2 2 0 0 1 3.828 21h1.344a2 2 0 0 0 1.414-.586L15 12"/><path d="m18 9 .4.4a1 1 0 1 1-3 3l-3.8-3.8a1 1 0 1 1 3-3l.4.4 3.4-3.4a1 1 0 1 1 3 3z"/><path d="m2 22 .414-.414"/></symbol>
-  <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></symbol>
-  <symbol id="i-eraser" viewBox="0 0 24 24"><path d="M21 21H8a2 2 0 0 1-1.42-.587l-3.994-3.999a2 2 0 0 1 0-2.828l10-10a2 2 0 0 1 2.829 0l5.999 6a2 2 0 0 1 0 2.828L12.834 21"/><path d="m5.082 11.09 8.828 8.828"/></symbol>
-  <symbol id="i-dices" viewBox="0 0 24 24"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></symbol>
-  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
-  <symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></symbol>
-  <symbol id="i-maximize-2" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="m21 3-7 7"/><path d="m3 21 7-7"/><path d="M9 21H3v-6"/></symbol>
-  <symbol id="i-film" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 3v18"/><path d="M3 7.5h4"/><path d="M3 12h18"/><path d="M3 16.5h4"/><path d="M17 3v18"/><path d="M17 7.5h4"/><path d="M17 16.5h4"/></symbol>
-  <symbol id="i-video" viewBox="0 0 24 24"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></symbol>
-  <symbol id="i-shield-alert" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></symbol>
-  <symbol id="i-group" viewBox="0 0 24 24"><path d="M3 7V5c0-1.1.9-2 2-2h2"/><path d="M17 3h2c1.1 0 2 .9 2 2v2"/><path d="M21 17v2c0 1.1-.9 2-2 2h-2"/><path d="M7 21H5c-1.1 0-2-.9-2-2v-2"/><rect width="7" height="5" x="7" y="7" rx="1"/><rect width="7" height="5" x="10" y="12" rx="1"/></symbol>
-  <symbol id="i-rotate-3d" viewBox="0 0 24 24"><path d="m15.194 13.707 3.814 1.86-1.86 3.814"/><path d="M16.47214 7.52786 A 5 10 0 1 0 13 21.79796"/><path d="M21.79796 11 A 10 5 0 1 0 19 15.57071"/></symbol>
-  <symbol id="i-waves" viewBox="0 0 24 24"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></symbol>
-  <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-circle-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-clapperboard" viewBox="0 0 24 24"><path d="m12.296 3.464 3.02 3.956"/><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="m6.18 5.276 3.1 3.899"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24"><path d="M11 10.27 7 3.34"/><path d="m11 13.73-4 6.93"/><path d="M12 22v-2"/><path d="M12 2v2"/><path d="M14 12h8"/><path d="m17 20.66-1-1.73"/><path d="m17 3.34-1 1.73"/><path d="M2 12h2"/><path d="m20.66 17-1.73-1"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m3.34 7 1.73 1"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="12" r="8"/></symbol>
+  <symbol id="i-credit-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></symbol>
+  <symbol id="i-file-text" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></symbol>
   <symbol id="i-folder-open" viewBox="0 0 24 24"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></symbol>
-  <symbol id="i-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></symbol>
-  <symbol id="i-save" viewBox="0 0 24 24"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></symbol>
-  <symbol id="i-file-down" viewBox="0 0 24 24"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></symbol>
-  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"/><circle cx="12" cy="13" r="3"/></symbol>
+  <symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/></symbol>
+  <symbol id="i-life-buoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-lock-open" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></symbol>
+  <symbol id="i-mail-check" viewBox="0 0 24 24"><path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/><path d="m16 19 2 2 4-4"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></symbol>
   <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></symbol>
+  <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M12 17V7"/><path d="M16 8h-6a2 2 0 0 0 0 4h4a2 2 0 0 1 0 4H8"/><path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-ruler" viewBox="0 0 24 24"><path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/><path d="m14.5 12.5 2-2"/><path d="m11.5 9.5 2-2"/><path d="m8.5 6.5 2-2"/><path d="m17.5 15.5 2-2"/></symbol>
+  <symbol id="i-scissors" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></symbol>
+  <symbol id="i-shield-alert" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></symbol>
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-shopping-bag" viewBox="0 0 24 24"><path d="M16 10a4 4 0 0 1-8 0"/><path d="M3.103 6.034h17.794"/><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
+  <symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-usb" viewBox="0 0 24 24"><circle cx="10" cy="7" r="1"/><circle cx="4" cy="20" r="1"/><path d="M4.7 19.3 19 5"/><path d="m21 3-3 1 2 2Z"/><path d="M9.26 7.68 5 12l2 5"/><path d="m10 14 5 2 3.5-3.5"/><path d="m18 12 1-1 1 1-1 1Z"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"/></symbol>
 </svg>
-
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="./">
-      <img src="assets/logo.png" width="52" height="52" alt="Logo PindiCADViewer : un engrenage orange et bleu autour d'un P et d'un pied à coulisse">
-      <div class="brandtxt"><strong>PindiCADViewer</strong><span class="badge">Version 1.9.0</span><span class="slogan">Puissance Mécanique et Précision 3D</span></div>
-    </a>
-    <nav class="lang" aria-label="Langue"><strong aria-current="page">FR</strong> | <a href="en/" hreflang="en" lang="en">EN</a></nav>
-    <a class="btn" href="#prix" data-buy>Acheter — 49 €</a>
-  </div>
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+<div class="h-20 max-w-[1200px] mx-auto px-gutter flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-lg">
+<a class="flex items-center gap-space-sm text-text-primary" href="index.html" aria-label="Pindi Concept — accueil"><svg class="h-9 w-9" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="7" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" stroke="#1F5BD8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="hdr-name font-headline-sm text-headline-sm tracking-tight text-text-primary font-bold">Pindi Concept</span></a>
+<nav class="hidden md:flex items-center gap-space-lg ml-space-md" aria-label="Navigation principale">
+<a class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#applications">Applications</a>
+<a class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors" href="pindicadviewer.html">PindiCADViewer</a>
+<a class="font-label-default text-label-default text-on-surface-variant hover:text-on-surface transition-colors" href="index.html#support">Support</a>
+</nav>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="lang flex items-center bg-surface-container p-[3px] rounded-lg" role="group" aria-label="Langue">
+<a href="#" hreflang="fr" lang="fr" aria-current="true">FR</a>
+<a href="en/index.html" hreflang="en" lang="en">EN</a>
+</div>
+<div class="hidden lg:flex items-center gap-space-sm">
+<a class="px-4 py-2.5 rounded-lg bg-surface-canvas text-text-primary font-label-default text-label-default hover:bg-surface-subtle transition-colors shadow-[0_1px_4px_rgba(0,0,0,0.06)]" href="pindicadviewer.html#telecharger">Essai gratuit</a>
+<a class="px-4 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-default text-label-default hover:bg-accent-hover transition-colors shadow-[0_1px_8px_rgba(31,91,216,0.2)]" href="pindicadviewer.html#prix">Acheter — 49 €</a>
+</div>
+</div>
+</div>
 </header>
-
-<main id="contenu">
-  <section class="hero">
-    <div class="wrap">
-      <h1>Le visualiseur CAO 3D pour ouvrir, mesurer et présenter vos assemblages</h1>
-      <p class="lead">Ouvrez vos fichiers STEP, IGES, BREP, STL, OBJ, 3DXML ou DXF, mesurez, coupez, éclatez, détectez les collisions et présentez vos projets, directement sur votre PC, sans connexion internet.</p>
-      <div class="actions">
-        <a class="btn big" href="#prix" data-download data-essai-principal>Essayer gratuitement 14 jours</a>
-        <a class="btn store-badge" href="#prix" data-store rel="noopener" style="display:none">Disponible sur Microsoft Store</a>
-        <a class="btn big sec" href="#prix" data-buy>Acheter — 49 €</a>
-      </div>
-      <p class="note">14 jours avec toutes les fonctions, puis visualisation seule tant qu'aucune licence n'est activée · Paiement unique · Windows 10/11</p>
-    </div>
-  </section>
-
-  <section class="shot" aria-label="Aperçu de l'application">
-    <div class="wrap shots">
-      <figure>
-        <picture>
-          <source type="image/webp" srcset="assets/capture-hero-800.webp 800w, assets/capture-hero.webp 1600w" sizes="(max-width: 800px) 100vw, 1100px">
-          <img src="assets/capture-hero.png" srcset="assets/capture-hero-800.png 800w, assets/capture-hero.png 1600w" sizes="(max-width: 800px) 100vw, 1100px" width="1600" height="900" alt="PindiCADViewer : moyeu de roue en vue éclatée, avec le pneu, la jante, le disque et la visserie, chaque pièce dans sa propre couleur." fetchpriority="high" onerror="this.closest('figure').classList.add('missing')">
-        </picture>
-        <div class="placeholder"><span>Capture à venir<br><small>site/assets/capture-hero.png</small></span></div>
-        <figcaption>Moyeu de roue en vue éclatée, couleurs par pièce</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section id="presentation" class="shot" aria-label="Présentation">
-    <div class="wrap shots">
-      <h2>Présentation</h2>
-      <figure>
-        <picture>
-          <source type="image/webp" srcset="assets/presentation-assemblage-800.webp 800w, assets/presentation-assemblage.webp 1600w" sizes="(max-width: 800px) 100vw, 1100px">
-          <img src="assets/presentation-assemblage.jpg" srcset="assets/presentation-assemblage-800.jpg 800w, assets/presentation-assemblage.jpg 1600w" sizes="(max-width: 800px) 100vw, 1100px" width="1600" height="900" loading="lazy" decoding="async" alt="PindiCADViewer 1.9.0 : assemblage d'un moule, deux pièces sélectionnées dans l'arborescence et surlignées dans la vue 3D">
-        </picture>
-        <figcaption>Assemblage et arborescence : sélectionnez vos pièces dans la liste ou dans la vue 3D</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section id="fonctionnalites">
-    <div class="wrap">
-      <h2>Tout pour inspecter et présenter vos modèles 3D</h2>
-      <div class="group" id="visualisation">
-        <h3 class="group-title">Visualisation</h3>
-        <p class="muted group-intro">Voyez votre modèle sous tous les angles, comme dans un logiciel de CAO.</p>
-        <div class="group-shot">
-      <figure>
-        <picture>
-          <source type="image/webp" srcset="assets/capture-1-800.webp 800w, assets/capture-1.webp 1600w" sizes="(max-width: 800px) 100vw, 1100px">
-          <img src="assets/capture-1.png" srcset="assets/capture-1-800.png 800w, assets/capture-1.png 1600w" sizes="(max-width: 800px) 100vw, 1100px" width="1600" height="900" alt="PindiCADViewer : assemblage mécanique complet (arbre, tube, flasques, roulements, joints, vis) affiché en 3D, avec l'arborescence des composants à gauche." onerror="this.closest('figure').classList.add('missing')">
-        </picture>
-        <div class="placeholder"><span>Capture à venir<br><small>site/assets/capture-1.png</small></span></div>
-        <figcaption>Assemblage complet et arborescence des composants</figcaption>
-      </figure>
-        </div>
-        <div class="grid">
-        <article class="card"><svg aria-hidden="true"><use href="#i-layers"/></svg><h3>6 modes d'affichage</h3><p>Ombré avec arêtes, ombré, filaire, lignes cachées visibles ou supprimées, rendu réaliste : lisez chaque pièce comme il vous convient (touches 1 à 6).</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-box"/></svg><h3>7 vues standard</h3><p>Face, arrière, gauche, droite, dessus, dessous et isométrique en un clic, avec la vue en cours repérée sur la barre.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-mouse-pointer-2"/></svg><h3>Navigation à la souris</h3><p>Sélectionner, translater, faire tourner, zoomer, zoom fenêtre et zoom ajusté pour recadrer tout le modèle d'un coup (touche Z).</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-box-select"/></svg><h3>Sélection rectangle</h3><p>Sélectionnez d'un seul geste toutes les pièces d'une zone.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-scissors"/></svg><h3>Plan de coupe</h3><p>Coupez selon X, Y ou Z, au curseur ou à la position tapée en mm : la section est remplie, pour voir l'intérieur de vos pièces.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-list-tree"/></svg><h3>Arborescence des composants</h3><p>Retrouvez chaque pièce : sélectionnez-la, masquez-la, changez sa couleur ou son opacité, renommez-la d'un double-clic.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-undo-2"/></svg><h3>Réinitialiser la vue, état d'origine</h3><p>Revenez à la vue de départ, ou annulez toutes vos modifications pour repartir du modèle tel qu'à l'ouverture.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-maximize"/></svg><h3>Plein écran</h3><p>Affichez la vue 3D seule pour présenter votre modèle proprement.</p></article>
-        </div>
-      </div>
-      <div class="group" id="mesure">
-        <h3 class="group-title">Outils de mesure et d'annotation</h3>
-        <p class="muted group-intro">Relevez les dimensions et commentez le modèle sans quitter l'écran.</p>
-        <div class="group-shot">
-      <figure>
-        <picture>
-          <source type="image/webp" srcset="assets/capture-3-800.webp 800w, assets/capture-3.webp 1600w" sizes="(max-width: 800px) 100vw, 1100px">
-          <img src="assets/capture-3.png" srcset="assets/capture-3-800.png 800w, assets/capture-3.png 1600w" sizes="(max-width: 800px) 100vw, 1100px" width="1600" height="900" alt="PindiCADViewer : flasque en plan de coupe avec deux mesures de diamètre, 46 mm et 74,5 mm, et le panneau des mesures en haut à droite." onerror="this.closest('figure').classList.add('missing')">
-        </picture>
-        <div class="placeholder"><span>Capture à venir<br><small>site/assets/capture-3.png</small></span></div>
-        <figcaption>Plan de coupe et mesures de diamètre (⌀ 46 mm et ⌀ 74,5 mm)</figcaption>
-      </figure>
-        </div>
-        <div class="grid">
-        <article class="card"><svg aria-hidden="true"><use href="#i-ruler"/></svg><h3>Mesure</h3><p>Survolez une arête ou une face : longueur, diamètre et rayon, aire. Épinglez plusieurs mesures, mesurez entre deux éléments (distance minimale, entre-axes, faces parallèles, angles) ou point à point avec accrochage.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-pencil-ruler"/></svg><h3>Cotes manuelles</h3><p>Cliquez une arête pour afficher sa longueur, deux arêtes pour leur écart, un bord de trou pour son diamètre.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-clipboard-list"/></svg><h3>Cotes automatiques et fiche technique</h3><p>Encombrement, diamètres, entraxes, épaisseurs, volume et surface générés en un clic.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-message-square"/></svg><h3>Annotations</h3><p>Posez des repères textuels sur le modèle ; ils sont enregistrés avec votre projet.</p></article>
-        </div>
-      </div>
-      <div class="group" id="affichage">
-        <h3 class="group-title">Affichage</h3>
-        <p class="muted group-intro">Réglez l'apparence pour mieux lire, comparer et présenter.</p>
-        <div class="grid">
-        <article class="card"><svg aria-hidden="true"><use href="#i-layout-grid"/></svg><h3>Grille au sol</h3><p>Affichez ou masquez la grille posée sous la pièce (touche G).</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-droplets"/></svg><h3>Tout transparent</h3><p>Rendez tout l'assemblage transparent pour voir à travers les pièces, ou réglez l'opacité pièce par pièce.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-pipette"/></svg><h3>Pipette</h3><p>Choisissez une couleur et peignez directement les pièces.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-palette"/></svg><h3>Couleurs par pièce</h3><p>Une couleur par pièce (les pièces identiques partagent la même) ; sur une pièce seule, une couleur par face pour mieux lire sa forme.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-eraser"/></svg><h3>Réinitialiser les couleurs</h3><p>Retirez d'un clic les couleurs posées à la main.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-dices"/></svg><h3>Couleur aléatoire</h3><p>Tirez de nouvelles couleurs au hasard jusqu'à ce que le résultat vous plaise.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-sun"/></svg><h3>Lumières et caméra</h3><p>Réglez l'éclairage (intensité, direction, teinte, lumières d'ambiance) et la position de la caméra.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-monitor"/></svg><h3>Trois thèmes</h3><p>Mode classique, mode jour ou mode nuit, selon votre poste de travail et votre éclairage.</p></article>
-        </div>
-      </div>
-      <div class="group" id="assemblage">
-        <h3 class="group-title">Assemblage</h3>
-        <p class="muted group-intro">Comprenez comment vos pièces s'assemblent et se déplacent.</p>
-        <div class="grid">
-        <article class="card"><svg aria-hidden="true"><use href="#i-maximize-2"/></svg><h3>Vue éclatée</h3><p>Éclatement radial, axial (X, Y, Z), par sous-ensembles ou pas à pas, avec curseur et lignes-guides.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-film"/></svg><h3>Animation des assemblages</h3><p>Éclatement animé, montage pas à pas (et démontage), rotation 360° et mode présentation, avec durée, vitesse, boucle et courbe adoucie réglables.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-video"/></svg><h3>Vidéos de présentation</h3><p>Enregistrez l'animation en vidéo MP4 (H.264) ou WebM : 16/9 (1920×1080) ou vertical 9/16 pour Instagram et TikTok, 30 ou 60 images/s, avec cadre de prévisualisation, fond dégradé et petit logo.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-shield-alert"/></svg><h3>Collisions : analyse d'interférences</h3><p>Analyse précise des interférences : arbre dans alésage mesuré au micron (jeu ou serrage au diamètre), volume d'intersection exact des autres pièces, jeux insuffisants, contacts et filetages classés à part. Calcul en arrière-plan, zoom sur chaque zone, rapport PDF et CSV. Déplacez aussi une pièce : elle s'arrête net au premier contact.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-group"/></svg><h3>Grouper</h3><p>Regroupez des pièces sous un nom : le groupe se sélectionne et se déplace comme un seul bloc.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-rotate-3d"/></svg><h3>Animation des pièces</h3><p>Rotation continue, rotation par angle, translation (aller simple ou yoyo) et présentation tournante, pour montrer le fonctionnement d'un mécanisme.</p></article>
-        </div>
-      </div>
-      <div class="group" id="simulation">
-        <h3 class="group-title">Simulation</h3>
-        <p class="muted group-intro">Animez et pilotez votre modèle.</p>
-        <div class="grid">
-        <article class="card"><svg aria-hidden="true"><use href="#i-waves"/></svg><h3>Flux : illustration de circulation de fluides</h3><p>Illustrez la circulation d'un fluide dans votre assemblage : cliquez un alésage et le circuit se crée tout seul le long de son axe. Six fluides (eau, air, huile, gaz, vapeur, chaud / froid), plusieurs circuits, repères Entrée / Sortie, étiquettes libres, légende automatique et export vidéo MP4. Illustration de principe, pas une simulation numérique.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-bot"/></svg><h3>Assistant en français</h3><p>Pilotez la vue par de simples phrases (« éclate à 50 % », « cache les vis », « mets le tube en rouge »). Fonctionne sur votre PC, sans compte ni connexion.</p></article>
-        </div>
-      </div>
-      <div class="group" id="import-export">
-        <h3 class="group-title">Import et export</h3>
-        <p class="muted group-intro">Ouvrez vos fichiers tels quels et sortez des documents prêts à partager.</p>
-        <div class="grid">
-        <article class="card"><svg aria-hidden="true"><use href="#i-folder-open"/></svg><h3>Import des formats courants</h3><p>STEP, IGES, BREP, STL, OBJ, 3DXML et DXF, par glisser-déposer, par le bouton Ouvrir ou, avec la version installée, d'un double-clic dans l'explorateur Windows. Les fichiers natifs (SLDPRT, CATPart, IPT…) s'ouvrent si SOLIDWORKS est installé et ouvert sur le même ordinateur ; sinon, exportez-les en STEP.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-gauge"/></svg><h3>Qualité STEP et réouverture rapide</h3><p>Choisissez Standard, Fin ou Très précis ; un modèle déjà ouvert se rouvre presque instantanément grâce au cache.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-save"/></svg><h3>Projets .pindi</h3><p>Enregistrez vue, mesures, annotations, couleurs et coupe dans un fichier autonome qui contient le fichier source.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-file-down"/></svg><h3>Fiche PDF</h3><p>Un PDF avec logo, quatre vues 3D, tableau de dimensions, mesures et annotations.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-camera"/></svg><h3>Capture PNG</h3><p>Image haute résolution de la vue en cours, avec fond transparent en option.</p></article>
-        <article class="card"><svg aria-hidden="true"><use href="#i-printer"/></svg><h3>Préparation à l'impression 3D</h3><p>Choisissez votre imprimante (ou un plateau personnalisé), mettez à l'échelle, posez à plat et découpez en tronçons : l'aperçu plateau montre en vert ce qui tient et en rouge ce qui dépasse. Export STL, 3MF ou OBJ en millimètres, avec emboîtement par alvéoles et broches en option.</p></article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="formats" class="alt">
-    <div class="wrap">
-      <h2>Formats pris en charge</h2>
-      <h3 class="fmt-title">Formats ouverts</h3>
-      <ul class="chips"><li><strong>STEP</strong> <span>.step .stp</span></li><li><strong>IGES</strong> <span>.iges .igs</span></li><li><strong>BREP OpenCascade</strong> <span>.brep</span></li><li><strong>STL</strong> <span>.stl</span></li><li><strong>OBJ</strong> <span>.obj</span></li><li><strong>3DXML (CATIA V6)</strong> <span>.3dxml</span></li><li><strong>DXF</strong> <span>.dxf</span></li></ul>
-      <h3 class="fmt-title">Exports</h3>
-      <ul class="chips"><li><strong>STL</strong> <span>.stl</span></li><li><strong>3MF</strong> <span>.3mf</span></li><li><strong>OBJ</strong> <span>.obj</span></li><li><strong>PDF</strong> <span>.pdf</span></li><li><strong>Vidéo MP4</strong> <span>.mp4</span></li><li><strong>Vidéo WebM</strong> <span>.webm</span></li><li><strong>CSV</strong> <span>.csv</span></li></ul>
-      <p class="muted">Les formats natifs (SLDPRT, SLDASM, CATPart, IPT, etc.) s'ouvrent si SOLIDWORKS est installé et ouvert sur le même ordinateur : il les convertit en STEP pour PindiCADViewer. Sinon, exportez-les en STEP depuis le logiciel d'origine.</p>
-    </div>
-  </section>
-
-  <section id="prix">
-    <div class="wrap">
-      <h2>Prix</h2>
-      <div class="price-card" id="acheter">
-        <span class="badge">Version 1.9.0</span>
-        <h3>PindiCADViewer pour Windows</h3>
-        <div class="amount">49 €</div>
-        <ul>
-          <li>Paiement unique de 49,00 € TTC — TVA non applicable, art. 293 B du CGI</li>
-          <li>Sans abonnement</li>
-          <li>Licence envoyée automatiquement par e-mail après le paiement</li>
-          <li>Installeur classique et version portable inclus</li>
-          <li>Pour Windows 10 et 11 (64 bits)</li>
-        </ul>
-        <a class="btn big" href="#prix" data-buy>Acheter — 49 €</a>
-        <p class="tva">49 € TTC — TVA non applicable, art. 293 B du CGI.</p>
-        <p class="livraison">Après le paiement, votre licence vous est envoyée automatiquement par e-mail (vérifiez vos courriers indésirables).</p>
-        <p class="livraison"><a class="btn sec" href="#prix" data-download>Essai gratuit 14 jours</a><small class="sous-btn">Installateur et version portable</small></p>
-        <p class="livraison">14 jours avec toutes les fonctions, puis visualisation seule tant qu'aucune licence n'est activée.</p>
-        <p class="livraison"><a href="guide-utilisation-pindicadviewer.pdf">Guide d'utilisation (PDF)</a> — tout le logiciel expliqué pas à pas.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="configuration" class="alt">
-    <div class="wrap">
-      <h2>Configuration requise</h2>
-      <ul class="req">
-        <li>Windows 10 ou 11, 64 bits uniquement (pas de version Mac ni Linux pour l'instant).</li>
-        <li>Deux versions incluses dans l'achat : l'installeur classique (environ 115 Mo) et une version portable, sans installation, à garder par exemple sur une clé USB.</li>
-        <li>Aucune connexion internet n'est nécessaire pour utiliser le logiciel.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="faq">
-    <div class="wrap">
-      <h2>Questions fréquentes</h2>
-      <div class="faq">
-        <details>
-          <summary>Comment je reçois ma licence après l'achat ?</summary>
-          <p>Après le paiement, votre licence vous est envoyée automatiquement par e-mail, en principe en quelques minutes (vérifiez vos courriers indésirables). L'e-mail contient votre clé et le fichier .pcvlic ; l'installeur se télécharge depuis cette page. Sans nouvelle sous 24 h, écrivez à <a href="mailto:contact@pindiconcept.fr">contact@pindiconcept.fr</a>.</p>
-        </details>
-        <details>
-          <summary>Que contient l'achat ?</summary>
-          <p>Deux versions Windows : l'installeur classique, et une version portable qui ne demande aucune installation (à garder sur une clé USB, par exemple).</p>
-        </details>
-        <details>
-          <summary>Puis-je essayer le logiciel avant de l'acheter ?</summary>
-          <p>Oui. Au premier lancement, « Commencer l'essai gratuit de 14 jours » donne accès à toutes les fonctions, sans carte bancaire. Ensuite, le logiciel reste utilisable en visualisation seule (ouvrir et regarder vos modèles) jusqu'à l'activation d'une licence.</p>
-        </details>
-        <details>
-          <summary>Fonctionne-t-il sur Mac ?</summary>
-          <p>Non, Windows uniquement pour l'instant.</p>
-        </details>
-        <details>
-          <summary>Mes fichiers sont-ils envoyés en ligne ?</summary>
-          <p>Non. Vos fichiers CAO sont ouverts et traités uniquement sur votre ordinateur. Le logiciel ne contient aucune télémétrie et ne recherche pas de mises à jour automatiquement. L'assistant IA fonctionne lui aussi sur votre PC, sans connexion, et la licence se vérifie hors ligne, sans identifiant matériel. Seule exception : une fois la licence activée, le logiciel vérifie au plus une fois par jour qu'elle n'a pas été désactivée (après un remboursement ou une contestation du paiement), en n'envoyant que le numéro de licence et la version ; sans connexion, il fonctionne normalement.</p>
-        </details>
-        <details>
-          <summary>Comment activer le logiciel ?</summary>
-          <p>Au premier lancement, cliquez sur « J'ai une licence » (ou, plus tard, menu Aide › Licence…) et collez votre clé de licence, ou choisissez le fichier .pcvlic reçu avec « Importer un fichier de licence ». Avec la version installée, un double-clic sur le fichier .pcvlic suffit. L'activation fonctionne sans internet et débloque tout aussitôt.</p>
-        </details>
-        <details>
-          <summary>Sur combien d'ordinateurs puis-je l'utiliser ?</summary>
-          <p>La licence est personnelle : vous pouvez l'installer sur 2 ordinateurs qui vous appartiennent au maximum. Elle couvre toutes les versions 1.x du logiciel.</p>
-        </details>
-        <details>
-          <summary>Mes fichiers SOLIDWORKS, CATIA ou Inventor s'ouvrent-ils ?</summary>
-          <p>Oui, si SOLIDWORKS est installé et ouvert sur le même ordinateur : PindiCADViewer lui fait convertir le fichier natif (SOLIDWORKS, CATIA V5, Inventor, Parasolid, Creo, NX, Solid Edge…) en STEP, puis l'affiche. Sans SOLIDWORKS, exportez le fichier en STEP depuis le logiciel d'origine ; les formats STEP, IGES, BREP, STL, OBJ, 3DXML et DXF s'ouvrent sans autre logiciel.</p>
-        </details>
-        <details>
-          <summary>Puis-je être remboursé ?</summary>
-          <p>Le logiciel étant livré immédiatement en téléchargement, le droit de rétractation légal ne s'applique pas lorsque vous avez expressément demandé la livraison immédiate et renoncé à ce droit au moment du paiement (article L221-28, 13° du Code de la consommation). En geste commercial, nous vous remboursons sur simple demande dans les 14 jours suivant l'achat si un problème technique empêche l'utilisation du logiciel et que nous ne parvenons pas à le résoudre. Détails : <a href="cgv.html#article-6">conditions générales de vente (article 6)</a>.</p>
-        </details>
-        <details>
-          <summary>Existe-t-il un mode d'emploi ?</summary>
-          <p>Oui : le <a href="guide-utilisation-pindicadviewer.pdf">guide d'utilisation (PDF)</a> décrit pas à pas l'installation, l'activation, l'ouverture des fichiers, la navigation, les mesures, le plan de coupe, les assemblages, l'impression 3D et les exports. Le même guide s'ouvre dans le logiciel avec la touche F1.</p>
-        </details>
-        <details>
-          <summary>Comment obtenir de l'aide ?</summary>
-          <p>Consultez le <a href="guide-utilisation-pindicadviewer.pdf">guide d'utilisation (PDF)</a> : il est aussi intégré au logiciel (touche F1, ou menu Aide › Guide d'utilisation). Pour toute autre question, écrivez-nous à <a href="mailto:contact@pindiconcept.fr">contact@pindiconcept.fr</a>.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+<main class="w-full pt-20 bg-surface">
+<section class="relative w-full overflow-hidden bg-surface-subtle" style="background-image: linear-gradient(to right, #E6EAF0 1px, transparent 1px), linear-gradient(to bottom, #E6EAF0 1px, transparent 1px); background-size: 32px 32px;">
+<div class="max-w-[1200px] mx-auto px-gutter py-space-xl lg:py-24 flex flex-col lg:flex-row items-center gap-space-xl">
+<div class="flex-1 min-w-0 flex flex-col gap-space-md z-10">
+<div class="inline-flex items-center gap-space-xs self-start px-3 py-1.5 rounded-lg bg-surface-canvas shadow-sm"><span class="w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-caps text-label-caps text-text-secondary tracking-widest uppercase">Éditeur de logiciels · France</span></div>
+<h1 class="font-headline-lg text-headline-lg lg:text-display text-text-primary tracking-tight">Des logiciels simples pour concevoir, visualiser et fabriquer.</h1>
+<p class="font-body-lead text-body-lead text-text-secondary max-w-xl">Pindi Concept crée des outils pratiques pour les techniciens, les ingénieurs et les makers. Achat unique, licence livrée par e-mail, support par e-mail en français et en anglais.</p>
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-primary-container text-on-primary font-label-default text-label-default hover:bg-accent-hover transition-all shadow-[0_10px_20px_rgba(31,91,216,0.22)]" href="pindicadviewer.html"><svg class="ic ic-20" aria-hidden="true"><use href="#i-box"/></svg><span>Découvrir PindiCADViewer</span></a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-surface-canvas text-text-primary font-label-default text-label-default hover:bg-surface-dim transition-all shadow-sm" href="pindicadviewer.html#telecharger"><span class="text-text-muted"><svg class="ic ic-18" aria-hidden="true"><use href="#i-timer"/></svg></span><span>Essai gratuit 14 jours</span></a>
+</div>
+<div class="pt-space-md flex flex-wrap items-center gap-space-md font-caption text-caption text-text-muted">
+<div class="flex items-center gap-2"><span class="text-primary-container"><svg class="ic ic-18" aria-hidden="true"><use href="#i-badge-check"/></svg></span><span>Sans abonnement</span></div>
+<div class="flex items-center gap-2"><span class="text-primary-container"><svg class="ic ic-18" aria-hidden="true"><use href="#i-zap"/></svg></span><span>Licence envoyée automatiquement par e-mail</span></div>
+<div class="flex items-center gap-2"><span class="text-primary-container"><svg class="ic ic-18" aria-hidden="true"><use href="#i-monitor"/></svg></span><span>Pour Windows 10 et 11 (64 bits)</span></div>
+</div>
+</div>
+<div class="flex-1 w-full min-w-0 z-10">
+<figure class="relative rounded-xl bg-surface-canvas shadow-[0_28px_56px_rgba(11,27,43,0.12)] overflow-hidden">
+<img class="shot" src="assets/pcv-eclate-fr.webp" srcset="assets/pcv-eclate-fr-800.webp 800w, assets/pcv-eclate-fr.webp 1600w" sizes="(max-width: 800px) 100vw, 1100px" alt="PindiCADViewer : vue éclatée d'un moyeu de roue (jante bleue, disque cuivre, fusée dorée), avec la nomenclature des pièces dans le panneau de droite" decoding="async"/>
+<figcaption class="px-4 py-2 bg-surface-subtle font-caption text-caption text-text-muted">PindiCADViewer 1.9.0 : vue éclatée et nomenclature</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section class="w-full bg-surface-canvas shadow-sm">
+<div class="max-w-[1200px] mx-auto px-gutter py-space-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface hover:bg-surface-subtle transition-colors">
+<div class="w-11 h-11 rounded-lg bg-accent-tint text-primary-container flex items-center justify-center shrink-0"><svg class="ic ic-24" aria-hidden="true"><use href="#i-lock"/></svg></div>
+<div class="flex flex-col"><h3 class="font-label-default text-label-default text-text-primary">Paiement sécurisé</h3><p class="font-body-sm text-body-sm text-text-muted mt-0.5 leading-snug">Paiement par Stripe : vos données de carte ne passent jamais par nous.</p></div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface hover:bg-surface-subtle transition-colors">
+<div class="w-11 h-11 rounded-lg bg-accent-tint text-primary-container flex items-center justify-center shrink-0"><svg class="ic ic-24" aria-hidden="true"><use href="#i-mail"/></svg></div>
+<div class="flex flex-col"><h3 class="font-label-default text-label-default text-text-primary">Licence par e-mail</h3><p class="font-body-sm text-body-sm text-text-muted mt-0.5 leading-snug">Envoyée automatiquement après le paiement, en principe en quelques minutes.</p></div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface hover:bg-surface-subtle transition-colors">
+<div class="w-11 h-11 rounded-lg bg-accent-tint text-primary-container flex items-center justify-center shrink-0"><svg class="ic ic-24" aria-hidden="true"><use href="#i-headset"/></svg></div>
+<div class="flex flex-col"><h3 class="font-label-default text-label-default text-text-primary">Support FR / EN</h3><p class="font-body-sm text-body-sm text-text-muted mt-0.5 leading-snug">Par e-mail à contact@pindiconcept.fr, réponse sous 48 h ouvrées.</p></div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface hover:bg-surface-subtle transition-colors">
+<div class="w-11 h-11 rounded-lg bg-accent-tint text-primary-container flex items-center justify-center shrink-0"><svg class="ic ic-24" aria-hidden="true"><use href="#i-shield-check"/></svg></div>
+<div class="flex flex-col"><h3 class="font-label-default text-label-default text-text-primary">Entreprise française</h3><p class="font-body-sm text-body-sm text-text-muted mt-0.5 leading-snug">Pindi Concept, Saint-Priest (Rhône). Garanties légales et médiation de la consommation CM2C.</p></div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full py-space-xl lg:py-24 bg-surface" id="applications">
+<div class="max-w-[1200px] mx-auto px-gutter flex flex-col gap-space-xl">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="inline-flex items-center gap-1.5 font-label-caps text-label-caps text-primary-container uppercase"><span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>Catalogue</div>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">Nos applications</h2>
+<p class="font-body-lead text-body-lead text-text-secondary mt-1">Des outils conçus pour un usage réel, en atelier et au bureau d'études.</p>
+</div>
+<div class="relative rounded-2xl bg-surface-canvas shadow-[0_20px_40px_rgba(31,91,216,0.08)] overflow-hidden flex flex-col lg:flex-row" id="prix">
+<div class="flex-1 lg:max-w-[54%] bg-surface-placeholder relative overflow-hidden">
+<img class="cover" src="assets/pcv-moule-fr.webp" srcset="assets/pcv-moule-fr-800.webp 800w, assets/pcv-moule-fr.webp 1600w" sizes="(max-width: 800px) 100vw, 1100px" alt="PindiCADViewer : assemblage d'un moule, tube et platines bleus, flasques cuivre, arbre doré, avec l'arborescence des composants" loading="lazy" decoding="async"/>
+</div>
+<div class="flex-1 p-space-lg lg:p-space-xl flex flex-col justify-between gap-space-lg bg-surface-canvas">
+<div class="flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<span class="px-3 py-1 rounded-md bg-accent-tint text-primary-container font-label-caps text-label-caps tracking-wider uppercase">Disponible · Windows 10 et 11</span>
+<span class="text-caption font-mono text-text-muted">Version 1.9.0</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-text-primary tracking-tight mt-1">PindiCADViewer</h3>
+<p class="font-body-default text-body-default text-text-secondary">Ouvrez, mesurez, coupez et présentez vos modèles 3D de CAO sur votre PC : fiche dimensionnelle, vue éclatée, animation et export PDF.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs text-text-secondary font-body-sm text-body-sm">
+<div class="flex items-center gap-2"><span class="text-primary-container"><svg class="ic ic-18" aria-hidden="true"><use href="#i-ruler"/></svg></span><span>Mesures 3D</span></div>
+<div class="flex items-center gap-2"><span class="text-primary-container"><svg class="ic ic-18" aria-hidden="true"><use href="#i-scissors"/></svg></span><span>Plans de coupe</span></div>
+<div class="flex items-center gap-2"><span class="text-primary-container"><svg class="ic ic-18" aria-hidden="true"><use href="#i-file-text"/></svg></span><span>Fiche dimensionnelle PDF</span></div>
+<div class="flex items-center gap-2"><span class="text-primary-container"><svg class="ic ic-18" aria-hidden="true"><use href="#i-clapperboard"/></svg></span><span>Vue éclatée, animation et vidéo</span></div>
+</div>
+</div>
+<div class="flex flex-col gap-space-md bg-surface-subtle p-space-md rounded-xl">
+<div class="flex flex-wrap items-baseline justify-between gap-2">
+<div class="flex items-baseline gap-2"><span class="font-headline-md text-headline-md text-text-primary font-bold">49 €</span><span class="font-caption text-caption text-text-muted">achat unique · TVA non applicable</span></div>
+<span class="font-label-caps text-label-caps text-status-warning font-semibold">14 jours d'essai gratuit</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<a class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary-container text-on-primary font-label-default text-label-default hover:bg-accent-hover transition-colors shadow-sm" href="pindicadviewer.html"><span>Voir l'application</span><svg class="ic ic-18" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+<a class="inline-flex items-center justify-center px-5 py-3 rounded-lg bg-surface-canvas text-text-primary font-label-default text-label-default hover:bg-surface-dim transition-colors shadow-sm" data-buy href="pindicadviewer.html#prix">Acheter — 49 €</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full py-space-xl lg:py-24 bg-surface" id="support">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<div class="rounded-3xl bg-text-primary text-text-inverse p-space-lg sm:p-space-xl lg:p-16 shadow-[0_24px_48px_rgba(11,27,43,0.18)] flex flex-col lg:flex-row lg:items-center justify-between gap-space-xl relative overflow-hidden">
+<div class="flex-1 min-w-0 flex flex-col gap-space-sm relative z-10">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded bg-border-inverse text-secondary-fixed font-label-caps text-label-caps tracking-widest uppercase">Assistance</div>
+<h2 class="font-headline-md text-headline-md lg:text-headline-lg text-text-inverse tracking-tight">Une question, une licence à retrouver ?</h2>
+<p class="font-body-lead text-body-lead text-text-inverse-body max-w-xl">Écrivez-nous en français ou en anglais : réponse sous 48 h ouvrées.</p>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm relative z-10 shrink-0">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-surface-canvas text-text-primary font-label-default text-label-default hover:bg-surface-subtle transition-all shadow-md" href="mailto:contact@pindiconcept.fr"><span class="text-primary-container"><svg class="ic ic-20" aria-hidden="true"><use href="#i-mail"/></svg></span><span>contact@pindiconcept.fr</span></a>
+<a class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl text-text-inverse font-label-default text-label-default hover:bg-white/10 transition-all" href="pindicadviewer.html#faq"><svg class="ic ic-20" aria-hidden="true"><use href="#i-life-buoy"/></svg><span>Centre d'aide</span></a>
+</div>
+</div>
+</div>
+</section>
+<section class="w-full pb-space-xl lg:pb-24 bg-surface">
+<div class="max-w-[1200px] mx-auto px-gutter flex flex-col gap-space-lg">
+<div class="flex flex-col gap-2"><span class="font-label-caps text-label-caps text-text-muted uppercase">Questions fréquentes</span><h2 class="font-headline-md text-headline-md text-text-primary">Foire aux questions</h2></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md items-start">
+<details class="group bg-surface-canvas rounded-xl p-space-md shadow-sm">
+<summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-body-strong text-body-strong text-text-primary"><span>Comment fonctionne la licence à 49 € ?</span><span class="text-text-muted transition-transform group-open:rotate-180"><svg class="ic ic-20" aria-hidden="true"><use href="#i-chevron-down"/></svg></span></summary>
+<div class="font-body-default text-body-default text-text-secondary mt-3 pt-3">Vous payez une seule fois, sans abonnement ni prélèvement. La licence (clé et fichier .pcvlic) vous est envoyée automatiquement par e-mail après le paiement. La licence est personnelle : vous pouvez l'utiliser sur 2 ordinateurs qui vous appartiennent. Changement d'ordinateur : le transfert est possible sur simple demande à <a class="text-primary underline" href="mailto:contact@pindiconcept.fr">contact@pindiconcept.fr</a>. Mises à jour 1.x incluses (1.9, 1.10…) ; une future version majeure 2.0 pourra faire l’objet d’un nouvel achat.</div>
+</details>
+<details class="group bg-surface-canvas rounded-xl p-space-md shadow-sm">
+<summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-body-strong text-body-strong text-text-primary"><span>Quels formats CAO 3D sont pris en charge ?</span><span class="text-text-muted transition-transform group-open:rotate-180"><svg class="ic ic-20" aria-hidden="true"><use href="#i-chevron-down"/></svg></span></summary>
+<div class="font-body-default text-body-default text-text-secondary mt-3 pt-3">PindiCADViewer ouvre STEP (.step, .stp), IGES (.iges, .igs), BREP (.brep), STL (.stl), OBJ (.obj), 3DXML (.3dxml), DXF (.dxf), ainsi que ses propres projets .pindi. Via SOLIDWORKS, si SOLIDWORKS est installé sur le poste : SOLIDWORKS, eDrawings, Parasolid, ACIS, JT, Inventor, CATIA V5, NX, Creo, Solid Edge, DWG. PindiCADViewer les fait convertir en STEP par le SOLIDWORKS installé, puis les affiche.</div>
+</details>
+<details class="group bg-surface-canvas rounded-xl p-space-md shadow-sm">
+<summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-body-strong text-body-strong text-text-primary"><span>Puis-je tester avant d'acheter ?</span><span class="text-text-muted transition-transform group-open:rotate-180"><svg class="ic ic-20" aria-hidden="true"><use href="#i-chevron-down"/></svg></span></summary>
+<div class="font-body-default text-body-default text-text-secondary mt-3 pt-3">Oui. Au premier lancement, « Commencer l'essai gratuit de 14 jours » donne accès à toutes les fonctions, sans carte bancaire ni inscription. Ensuite, le logiciel reste utilisable en visualisation seule (ouvrir et regarder vos modèles) jusqu'à l'activation d'une licence.</div>
+</details>
+<details class="group bg-surface-canvas rounded-xl p-space-md shadow-sm">
+<summary class="flex items-center justify-between gap-3 cursor-pointer list-none font-body-strong text-body-strong text-text-primary"><span>Mes fichiers CAO sont-ils envoyés en ligne ?</span><span class="text-text-muted transition-transform group-open:rotate-180"><svg class="ic ic-20" aria-hidden="true"><use href="#i-chevron-down"/></svg></span></summary>
+<div class="font-body-default text-body-default text-text-secondary mt-3 pt-3">Non. Vos fichiers CAO sont ouverts et traités uniquement sur votre ordinateur. Le logiciel ne contient aucune télémétrie et ne recherche pas de mises à jour automatiquement. L'assistant IA fonctionne lui aussi sur votre PC, sans connexion, et la licence se vérifie hors ligne, sans identifiant matériel. Seule exception : une fois la licence activée, le logiciel vérifie au plus une fois par jour qu'elle n'a pas été désactivée (après un remboursement ou une contestation du paiement), en n'envoyant que le numéro de licence et la version ; sans connexion, il fonctionne normalement.</div>
+</details>
+</div>
+</div>
+</section>
 </main>
-
-<footer>
-  <div class="wrap">
-    <div>
-      <p>© 2026 Pindi Concept — Patrick Musuyi Mupindi EI</p>
-      <p>Contact : <a href="mailto:contact@pindiconcept.fr">contact@pindiconcept.fr</a></p>
-      <p class="mediateur">Médiateur de la consommation : <a href="https://www.cm2c.net" rel="noopener">CM2C</a></p>
-    </div>
-    <ul>
-      <li><a href="mentions-legales.html">Mentions légales</a></li>
-      <li><a href="cgv.html">CGV</a></li>
-      <li><a href="confidentialite.html">Confidentialité</a></li>
-      <li><a href="mailto:contact@pindiconcept.fr">Contact</a></li>
-    </ul>
-  </div>
+<footer class="w-full bg-text-primary text-text-inverse py-space-xl">
+<div class="max-w-[1200px] mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl pb-space-xl">
+<div class="lg:col-span-2 flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-sm text-text-inverse"><svg class="h-8 w-8" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="7" stroke="currentColor" stroke-width="2"/><path d="M11 23V9h6a4.5 4.5 0 0 1 0 9h-6" stroke="#1F5BD8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="font-headline-sm text-headline-sm text-text-inverse font-bold">Pindi Concept</span></div>
+<p class="font-body-sm text-body-sm text-text-inverse-body mt-space-xs max-w-sm">Éditeur indépendant de logiciels techniques pour les bureaux d'études, les ateliers et les makers.</p>
+<div class="flex flex-col gap-1 mt-space-sm font-caption text-caption text-text-inverse-muted">
+<span>Éditeur : Patrick Musuyi Mupindi EI</span>
+<span>SIRET : 522 939 941 00038</span>
+<span>RCS Lyon 522 939 941</span>
+<span>TVA non applicable, art. 293 B du CGI</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-label-caps text-label-caps text-text-inverse uppercase tracking-wider">Applications</h3>
+<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-text-inverse-body">
+<li><a class="hover:text-text-inverse" href="pindicadviewer.html">PindiCADViewer</a></li>
+<li><a class="hover:text-text-inverse" href="pindicadviewer.html#telecharger">Télécharger</a></li>
+<li><a class="hover:text-text-inverse" data-download href="pindicadviewer.html#telecharger">Notes de version 1.9.0</a></li>
+<li><a class="hover:text-text-inverse" href="guide-utilisation-pindicadviewer.pdf">Guide d'utilisation (PDF)</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-label-caps text-label-caps text-text-inverse uppercase tracking-wider">Support</h3>
+<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-text-inverse-body">
+<li><a class="hover:text-text-inverse" href="pindicadviewer.html#faq">Centre d'aide (FAQ)</a></li>
+<li><a class="hover:text-text-inverse" href="mailto:contact@pindiconcept.fr?subject=Retrouver%20ma%20licence">Retrouver ma licence</a></li>
+<li><a class="hover:text-text-inverse" href="mailto:contact@pindiconcept.fr">Contact</a></li>
+</ul>
+</div>
+<div class="flex flex-col gap-space-sm">
+<h3 class="font-label-caps text-label-caps text-text-inverse uppercase tracking-wider">Informations légales</h3>
+<ul class="flex flex-col gap-space-xs font-body-sm text-body-sm text-text-inverse-body">
+<li><a class="hover:text-text-inverse" href="cgv.html">Conditions générales de vente (CGV)</a></li>
+<li><a class="hover:text-text-inverse" href="confidentialite.html">Politique de confidentialité</a></li>
+<li><a class="hover:text-text-inverse" href="mentions-legales.html">Mentions légales</a></li>
+<li><a class="hover:text-text-inverse" href="https://www.cm2c.net" rel="noopener">Médiation de la consommation : CM2C</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md font-caption text-caption text-text-inverse-muted">
+<p>© 2026 Pindi Concept — Patrick Musuyi Mupindi EI. Tous droits réservés.</p>
+<p>Saint-Priest (Rhône), France</p>
+</div>
+</div>
 </footer>
-
 <script src="config.js"></script>
 </body>
 </html>
