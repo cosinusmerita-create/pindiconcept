@@ -42,6 +42,7 @@
   <symbol id="i-timer" viewBox="0 0 24 24"><line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></symbol>
   <symbol id="i-triangle-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
   <symbol id="i-usb" viewBox="0 0 24 24"><circle cx="10" cy="7" r="1"/><circle cx="4" cy="20" r="1"/><path d="M4.7 19.3 19 5"/><path d="m21 3-3 1 2 2Z"/><path d="M9.26 7.68 5 12l2 5"/><path d="m10 14 5 2 3.5-3.5"/><path d="m18 12 1-1 1 1-1 1Z"/></symbol>
+  <symbol id="i-volume-2" viewBox="0 0 24 24"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/><path d="M16 9a5 5 0 0 1 0 6"/><path d="M19.364 18.364a9 9 0 0 0 0-12.728"/></symbol>
   <symbol id="i-zap" viewBox="0 0 24 24"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"/></symbol>
 </svg>
 <header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
@@ -90,8 +91,11 @@
 </div>
 </div>
 <figure class="relative w-full bg-surface-canvas rounded-2xl shadow-[0_28px_56px_rgba(11,27,43,0.12)] overflow-hidden">
-<img class="shot" src="assets/pcv-eclate-fr.webp" srcset="assets/pcv-eclate-fr-800.webp 800w, assets/pcv-eclate-fr.webp 1600w" sizes="(max-width: 800px) 100vw, 1100px" alt="PindiCADViewer : vue éclatée d'un moyeu de roue (jante bleue, disque cuivre, fusée dorée), avec la nomenclature des pièces dans le panneau de droite" decoding="async"/>
-<figcaption class="px-4 py-2.5 bg-surface-subtle font-caption text-caption text-text-muted">Vue éclatée d'un moyeu de roue et nomenclature des pièces (capture de PindiCADViewer 1.9.0)</figcaption>
+<div class="relative" data-video>
+<video class="shot" muted loop playsinline preload="none" width="1920" height="1080" poster="media/pindicadviewer-1.9.0-poster-fr.webp" data-boucle="media/pindicadviewer-1.9.0-boucle-fr.mp4" data-complete="media/pindicadviewer-1.9.0-fr.mp4" aria-label="Vidéo de présentation de PindiCADViewer 1.9.0"></video>
+<button type="button" class="btn-son" data-son><svg class="ic ic-20" aria-hidden="true"><use href="#i-volume-2"/></svg><span>Activer le son</span></button>
+</div>
+<figcaption class="px-4 py-2.5 bg-surface-subtle font-caption text-caption text-text-muted">Présentation de PindiCADViewer 1.9.0 en vidéo (100 s) : « Activer le son » lance la version complète, avec les contrôles</figcaption>
 </figure>
 </div>
 </section>
@@ -337,5 +341,6 @@
 </div>
 </footer>
 <script src="config.js"></script>
+<script src="assets/video.js" defer></script>
 </body>
 </html>

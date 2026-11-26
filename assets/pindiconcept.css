@@ -14,3 +14,10 @@ summary::-webkit-details-marker{display:none}
 @media (min-width:768px){.md\:items-center{align-items:center}}
 @media (max-width:640px){.text-display{font-size:44px}.prix-grand{font-size:48px;white-space:nowrap}}
 .prix-grand{white-space:nowrap}
+
+/* Vidéo de présentation : bouton « Activer le son » par-dessus la boucle muette */
+.btn-son{position:absolute;right:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:0;border-radius:10px;background:#1F5BD8;color:#fff;font:600 16px/1.2 Inter,'Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;box-shadow:0 8px 20px rgba(11,27,43,.35);cursor:pointer}
+.btn-son:hover{background:#163F99}
+.btn-son:focus-visible{outline:3px solid #EC871B;outline-offset:2px}
+[data-video] video{background:#0b0e13;aspect-ratio:16/9}
+@media (max-width:640px){.btn-son{right:10px;bottom:10px;padding:9px 13px;font-size:14px}}
