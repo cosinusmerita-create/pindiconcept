@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.pindiconcept.fr/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.pindiconcept.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pindiconcept.fr/en/"/>
+  </url>
+  <url>
+    <loc>https://www.pindiconcept.fr/en/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.pindiconcept.fr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pindiconcept.fr/en/"/>
+  </url>
+  <url>
+    <loc>https://www.pindiconcept.fr/pindicadviewer.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.pindiconcept.fr/pindicadviewer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pindiconcept.fr/en/pindicadviewer.html"/>
+  </url>
+  <url>
+    <loc>https://www.pindiconcept.fr/en/pindicadviewer.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.pindiconcept.fr/pindicadviewer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pindiconcept.fr/en/pindicadviewer.html"/>
+  </url>
+  <url>
+    <loc>https://www.pindiconcept.fr/cgv.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.pindiconcept.fr/cgv.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pindiconcept.fr/en/terms.html"/>
+  </url>
+  <url>
+    <loc>https://www.pindiconcept.fr/en/terms.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.pindiconcept.fr/cgv.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pindiconcept.fr/en/terms.html"/>
+  </url>
+  <url>
+    <loc>https://www.pindiconcept.fr/confidentialite.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.pindiconcept.fr/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pindiconcept.fr/en/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://www.pindiconcept.fr/en/privacy.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.pindiconcept.fr/confidentialite.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pindiconcept.fr/en/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://www.pindiconcept.fr/mentions-legales.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.pindiconcept.fr/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pindiconcept.fr/en/legal-notice.html"/>
+  </url>
+  <url>
+    <loc>https://www.pindiconcept.fr/en/legal-notice.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.pindiconcept.fr/mentions-legales.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pindiconcept.fr/en/legal-notice.html"/>
+  </url>
+</urlset>

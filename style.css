@@ -184,3 +184,6 @@ header.top nav.lang + .btn { margin-left: 14px; }
 .note-traduction { background: #fff6e8; border-left: 4px solid #ec871b; padding: 10px 14px; border-radius: 6px; color: #1f2328; }
 .note-traduction a { color: #9a3412; }
 .note-traduction a:hover { color: #7c2d12; }
+.lien-langue { margin: 0 0 16px; color: var(--muted); font-size: .95rem; }
+.lien-langue a { display: inline-block; padding: 6px 14px; border: 2px solid var(--orange); border-radius: 8px; color: var(--orange); font-weight: 700; text-decoration: none; margin-right: 6px; }
+.lien-langue a:hover { background: var(--orange); color: #14161a; }
