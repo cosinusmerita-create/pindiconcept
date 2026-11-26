@@ -377,9 +377,9 @@
       "r": "Consultez le {guide} : il est aussi intégré au logiciel (touche F1, ou menu Aide › Guide d'utilisation). Pour toute autre question, écrivez-nous à {email}."
     }
   ],
-  "video": {
-    "fichier": "media/PindiCADViewer_promo_16x9.mp4",
-    "poster": "assets/capture-hero-800.png",
-    "titre": "Présentation de PindiCADViewer"
+  "presentation": {
+    "base": "assets/presentation-assemblage",
+    "alt": "PindiCADViewer 1.9.0 : assemblage d'un moule, deux pièces sélectionnées dans l'arborescence et surlignées dans la vue 3D",
+    "legende": "Assemblage et arborescence : sélectionnez vos pièces dans la liste ou dans la vue 3D"
   }
 }

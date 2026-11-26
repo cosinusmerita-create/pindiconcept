@@ -90,13 +90,16 @@
     </div>
   </section>
 
-  <section id="presentation" class="shot" aria-label="Vidéo de présentation">
+  <section id="presentation" class="shot" aria-label="Présentation">
     <div class="wrap shots">
-      <h2>Présentation en vidéo</h2>
-      <video controls preload="none" poster="assets/capture-hero-800.png" width="1280" height="720" aria-label="Présentation de PindiCADViewer">
-        <source src="media/PindiCADViewer_promo_16x9.mp4" type="video/mp4">
-        Votre navigateur ne lit pas cette vidéo : <a href="media/PindiCADViewer_promo_16x9.mp4">télécharger la vidéo de présentation</a>.
-      </video>
+      <h2>Présentation</h2>
+      <figure>
+        <picture>
+          <source type="image/webp" srcset="assets/presentation-assemblage-800.webp 800w, assets/presentation-assemblage.webp 1600w" sizes="(max-width: 800px) 100vw, 1100px">
+          <img src="assets/presentation-assemblage.jpg" srcset="assets/presentation-assemblage-800.jpg 800w, assets/presentation-assemblage.jpg 1600w" sizes="(max-width: 800px) 100vw, 1100px" width="1600" height="900" loading="lazy" decoding="async" alt="PindiCADViewer 1.9.0 : assemblage d'un moule, deux pièces sélectionnées dans l'arborescence et surlignées dans la vue 3D">
+        </picture>
+        <figcaption>Assemblage et arborescence : sélectionnez vos pièces dans la liste ou dans la vue 3D</figcaption>
+      </figure>
     </div>
   </section>
 
